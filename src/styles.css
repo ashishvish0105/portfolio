@@ -97,6 +97,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    overflow-y: auto;
   }
 
   ::selection {
@@ -173,7 +174,7 @@
     border-radius: 9999px;
     background: radial-gradient(circle, color-mix(in oklab, var(--glow) 18%, transparent) 0%, transparent 60%);
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: -1;
     transition: opacity 0.3s ease;
     will-change: transform;
   }

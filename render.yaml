@@ -1,0 +1,11 @@
+services:
+  - type: static_site
+    name: ashish-portfolio
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+    routes:
+      - path: /*
+        destination: /index.html
