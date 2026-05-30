@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Sparkles } from "lucide-react";
-import portrait from "@/assets/ashish-portrait.jpg";
+import portrait from "@/assets/ashish-portrait.png";
 import { TypingText } from "@/components/TypingText";
 
 export function Hero() {
