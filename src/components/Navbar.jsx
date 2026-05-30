@@ -29,7 +29,20 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-14 md:h-16 flex items-center justify-between">
         <a href="#top" className="font-mono text-xs md:text-sm tracking-widest text-foreground">
-          VISHWAKARMA<span className="text-glow">_</span>LOG
+                         <div style={{
+    borderRadius: "50%",
+    color: "#ffffff",
+    fontSize: "20px",
+    fontWeight: 700,
+    lineHeight: "40px",
+    textAlign: "center",
+    letterSpacing: "2px",
+    margin: "0 auto",
+  }}
+>
+  AV
+</div>
+
         </a>
 
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
