@@ -1,23 +1,130 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, Send } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Send, CheckCircle2, AlertCircle, Loader } from "lucide-react";
 import { SectionHeader } from "./About";
+import emailjs from "@emailjs/browser";
 
 const channels = [
-  { icon: Mail, label: "Email", value: "ashish@example.com", href: "mailto:ashish@example.com" },
-  { icon: Phone, label: "Phone", value: "+91 00000 00000", href: "tel:+910000000000" },
-  { icon: Linkedin, label: "LinkedIn", value: "/in/ashish-vishwakarma", href: "#" },
-  { icon: Github, label: "GitHub", value: "@ashish-dev", href: "#" },
+  { icon: Mail, label: "Email", value: "ashishvish0105@gmail.com", href: "mailto:ashishvish0105@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 88 66 077 896", href: "tel:+91 88 66 077 896" },
+  { icon: Linkedin, label: "LinkedIn", value: "in/ashishvish0105", href: "https://www.linkedin.com/in/ashishvish0105/" },
+  { icon: Github, label: "GitHub", value: "@ashishvish0105", href: "https://github.com/ashishvish0105" },
 ];
 
-export function Contact() {
-  const [sent, setSent] = useState(false);
+// Initialize EmailJS
+const initializeEmailJS = () => {
+  emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+};
 
-  const onSubmit = (e) => {
+// Validate email format
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+export function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [statusMessage, setStatusMessage] = useState("");
+  const [errors, setErrors] = useState({});
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initializeEmailJS();
+  }, []);
+
+  // Validate form
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!isValidEmail(formData.email)) {
+      newErrors.email = "Please enter a valid email";
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    e.target.reset();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          // Template variables - match your EmailJS template exactly
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }
+      );
+
+      if (response.status === 200) {
+        setStatus("success");
+        setStatusMessage("Message sent successfully! I'll get back to you within 24 hours.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+
+        // Clear success message after 5 seconds
+        setTimeout(() => setStatus(null), 5000);
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+      setStatusMessage(
+        error.text || "Failed to send message. Please try again later or contact directly."
+      );
+
+      // Clear error message after 5 seconds
+      setTimeout(() => setStatus(null), 5000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -71,43 +178,122 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
             className="col-span-12 lg:col-span-7 glass p-4 md:p-6 lg:p-8 xl:p-10"
           >
+            {/* Status Messages */}
+            {status === "success" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="mb-6 p-4 md:p-5 border border-green-500/50 bg-green-500/10 rounded-lg flex items-start gap-3"
+              >
+                <CheckCircle2 className="size-5 text-green-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm md:text-base text-green-400 font-medium">Success!</p>
+                  <p className="text-xs md:text-sm text-green-400/80 mt-1">{statusMessage}</p>
+                </div>
+              </motion.div>
+            )}
+
+            {status === "error" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="mb-6 p-4 md:p-5 border border-red-500/50 bg-red-500/10 rounded-lg flex items-start gap-3"
+              >
+                <AlertCircle className="size-5 text-red-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm md:text-base text-red-400 font-medium">Error</p>
+                  <p className="text-xs md:text-sm text-red-400/80 mt-1">{statusMessage}</p>
+                </div>
+              </motion.div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              <Field label="Name" name="name" required />
-              <Field label="Email" name="email" type="email" required />
+              <Field
+                label="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                error={errors.name}
+                disabled={loading}
+              />
+              <Field
+                label="Email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                error={errors.email}
+                disabled={loading}
+              />
             </div>
+
             <div className="mt-4 md:mt-6">
-              <Field label="Subject" name="subject" />
+              <Field
+                label="Subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                error={errors.subject}
+                disabled={loading}
+              />
             </div>
+
             <div className="mt-4 md:mt-6">
               <label className="font-mono text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground">
                 Message
               </label>
               <textarea
-                required
                 name="message"
                 rows={4}
-                className="mt-2 w-full bg-transparent border-b border-border focus:border-glow outline-none py-2 text-sm md:text-base text-foreground placeholder:text-muted-foreground/50 transition-colors resize-none"
+                value={formData.message}
+                onChange={handleChange}
+                disabled={loading}
+                className={`mt-2 w-full bg-transparent border-b outline-none py-2 text-sm md:text-base placeholder:text-muted-foreground/50 transition-colors resize-none ${
+                  errors.message ? "border-red-500/50" : "border-border focus:border-glow"
+                } text-foreground`}
                 placeholder="Tell me about your project..."
               />
+              {errors.message && (
+                <p className="mt-2 text-xs text-red-400">{errors.message}</p>
+              )}
             </div>
 
             <div className="mt-8 md:mt-10 flex items-center justify-between gap-4 flex-wrap">
               <span className="font-mono text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-widest">
-                {sent ? (
-                  <span className="text-glow">// message transmitted</span>
+                {loading ? (
+                  <span className="text-glow flex items-center gap-2">
+                    <Loader className="size-3 animate-spin" />
+                    // sending...
+                  </span>
+                ) : status === "success" ? (
+                  <span className="text-green-400">// message transmitted</span>
+                ) : status === "error" ? (
+                  <span className="text-red-400">// transmission failed</span>
                 ) : (
                   "// avg response · 24h"
                 )}
               </span>
               <button
                 type="submit"
-                className="group inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 bg-foreground text-background font-mono text-xs font-semibold uppercase tracking-widest hover:bg-glow transition-all duration-300 active:scale-95 whitespace-nowrap"
+                disabled={loading}
+                className="group inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 bg-foreground text-background font-mono text-xs font-semibold uppercase tracking-widest hover:bg-glow transition-all duration-300 active:scale-95 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
-                <Send className="size-3 md:size-3.5 transition-transform group-hover:translate-x-1" />
+                {loading ? (
+                  <>
+                    <Loader className="size-3 md:size-3.5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="size-3 md:size-3.5 transition-transform group-hover:translate-x-1" />
+                  </>
+                )}
               </button>
             </div>
           </motion.form>
@@ -121,7 +307,10 @@ function Field({
   label,
   name,
   type = "text",
-  required,
+  value,
+  onChange,
+  error,
+  disabled,
 }) {
   return (
     <div>
@@ -129,11 +318,16 @@ function Field({
         {label}
       </label>
       <input
-        required={required}
         name={name}
         type={type}
-        className="mt-2 w-full bg-transparent border-b border-border focus:border-glow outline-none py-2 text-sm md:text-base text-foreground transition-colors"
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+        className={`mt-2 w-full bg-transparent border-b outline-none py-2 text-sm md:text-base text-foreground placeholder:text-muted-foreground/50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+          error ? "border-red-500/50" : "border-border focus:border-glow"
+        }`}
       />
+      {error && <p className="mt-2 text-xs text-red-400">{error}</p>}
     </div>
   );
 }
