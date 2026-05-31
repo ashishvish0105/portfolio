@@ -11,39 +11,45 @@ import portfolio from "@/assets/project-portfolio.jpg";
 const projects = [
   {
     name: "PilotBird",
-    desc: "Aviation data platform with real-time flight monitoring dashboards.",
-    tech: ["Angular", ".NET Core", "SQL Server"],
+    desc: "Developed an AI-powered insurance analytics platform for the US, UK, and Canadian markets, collecting and processing publicly available customer data from multiple online sources",
+    tech: ["Angular", ".NET Core", "SQL Server", "Docker"],
     image: pilotbird,
+    liveUrl: "https://www.pilotbird.com/",
   },
   {
     name: "Amazon Tools",
-    desc: "Seller analytics suite with product tracking and revenue insights.",
+    desc: "Developed automated data extraction and reporting tools for Amazon sellers, processing over 5,000 product records daily.",
     tech: ["Angular", "Web API", "Charts"],
     image: amazon,
+    liveUrl: "",
   },
   {
     name: "Cloud Labs",
-    desc: "Browser-based virtual lab environment for cloud computing training.",
-    tech: ["Angular", ".NET", "Docker"],
+    desc: "Built a full-stack event management platform supporting 40+ events, enabling seamless event registration and participant management.",
+    tech: ["Angular", ".NET", "SQL Server"],
     image: cloudlabs,
+    liveUrl: "",
   },
   {
     name: "GHI Portal",
-    desc: "Government healthcare insurance portal with patient records and claims.",
-    tech: ["Angular", ".NET Core", "SQL"],
+    desc: "Developed a service management system for a US-based chimney repair company, streamlining service request and workforce operations.",
+    tech: ["Angular", "DevExpress dashboard", ".NET Core", "SQL Server"],
     image: ghi,
+    liveUrl: "",
   },
   {
     name: "AquaFish",
-    desc: "Aquarium management app with species tracking and water quality alerts.",
+    desc: "Aquarium management app with selling fish and species tracking and water quality alerts.",
     tech: ["Angular", "TypeScript", "PWA"],
     image: aquafish,
+    liveUrl: "https://aquafish.vercel.app/",
   },
   {
     name: "Portfolio Website",
     desc: "This website — built with React, Tailwind, and Framer Motion.",
-    tech: ["React", "Tailwind", "Framer"],
+    tech: ["React", "Tailwind", "Framer", "EmailJS"],
     image: portfolio,
+    liveUrl: "https://your-portfolio-url.com",
   },
 ];
 
@@ -96,7 +102,25 @@ export function Projects() {
                 </div>
 
                 <div className="mt-4 md:mt-6 flex items-center gap-4 pt-4 border-t border-border">
-                  <a
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-foreground hover:text-glow transition-colors"
+                    >
+                      <ExternalLink className="size-3" />
+                      <span>Live</span>
+                    </a>
+                    <a
+                      href={p.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-glow transition-colors"
+                    >
+                      <Github className="size-3" />
+                      <span>Code</span>
+                    </a>
+                  {/* <a
                     href="#"
                     className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-foreground hover:text-glow transition-colors"
                   >
@@ -111,7 +135,7 @@ export function Projects() {
                     <Github className="size-3" />
                     <span className="hidden sm:inline">Source</span>
                     <span className="sm:hidden">Code</span>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </motion.article>
