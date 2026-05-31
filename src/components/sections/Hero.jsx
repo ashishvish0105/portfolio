@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Sparkles } from "lucide-react";
 import portrait from "@/assets/ashish-portrait.png";
 import { TypingText } from "@/components/TypingText";
+import resumePdf1 from "@/assets/Document/Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf";
+import resumePdf2 from "@/assets/Ashish_Vishwakarma.pdf";
 
 export function Hero() {
   return (
@@ -66,7 +68,7 @@ export function Hero() {
               View Projects
             </a>
             <a
-              href="/Document/Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf"
+              href={resumePdf1}
               download="Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf"
               className="inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 text-muted-foreground font-mono text-xs uppercase tracking-widest hover:text-glow transition-colors whitespace-nowrap"
             > 
@@ -76,7 +78,7 @@ export function Hero() {
             </a>
 
             <a
-              href="/assets/Ashish_Vishwakarma.pdf"
+              href={resumePdf2}
               download="Ashish_Vishwakarma.pdf"
               className="inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 text-muted-foreground font-mono text-xs uppercase tracking-widest hover:text-glow transition-colors whitespace-nowrap"
             > 
