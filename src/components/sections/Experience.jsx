@@ -3,29 +3,37 @@ import { SectionHeader } from "./About";
 
 const items = [
   {
-    company: "MegaMinds Technologies",
+    company: "Freelance - eMyShop",
     role: "Full Stack Developer",
-    period: "2025 — Present",
+    period: "May / 2025 - Present",
     detail:
-      "Leading development of the PilotBird platform — building Angular dashboards and .NET APIs for aviation data workflows.",
-    tags: ["Angular", ".NET Core", "SQL Server", "PilotBird"],
+      "Developing a full-featured e-commerce platform with product catalog management, shopping cart, order processing, user authentication, and payment integration. Building responsive Angular interfaces and scalable .NET Core APIs.",
+    tags: ["Angular", ".NET Core", "SQL Server", "REST API"],
     active: true,
   },
   {
-    company: "Vision Infotech",
-    role: "Angular + .NET Developer",
-    period: "2022 — 2024",
+    company: "Megaminds Tech Private Limited",
+    role: "Angular & .NET Developer",
+    period: "May / 2025 - April / 2026",
     detail:
-      "Delivered full-stack web apps for clients in healthcare and e-commerce. Built reusable Angular component libraries and REST APIs.",
-    tags: ["Angular", ".NET Web API", "Entity Framework"],
+      "Developed the PilotBird insurance analytics platform for the US, UK, and Canadian markets. Built Angular dashboards, AI-assisted data verification workflows, and scalable .NET backend services for customer analytics and risk profiling.",
+    tags: ["Angular", ".NET Core", "SQL Server", "Azure DevOps", "Git", "Docker"],
+  },
+  {
+    company: "Vision Infotech",
+    role: "Angular & .NET Developer",
+    period: "April / 2022 - Sept / 2024",
+    detail:
+      "Delivered enterprise web applications including Amazon seller tools, event management systems, and service management portals. Developed Angular frontends, .NET APIs, reporting dashboards, and third-party integrations.",
+    tags: ["Angular", ".NET Core", "SQL Server", "Entity Framework", "Azure DevOps", "Git"],
   },
   {
     company: "Goldenmace IT Solutions",
-    role: "Web Designer",
-    period: "2020 — 2022",
+    role: "Web Designer & Frontend Developer",
+    period: "April / 2021 - March / 2022",
     detail:
-      "Designed and developed responsive marketing sites and dashboards. Bridged design and engineering with pixel-perfect handoffs.",
-    tags: ["HTML", "CSS", "JavaScript", "UI Design"],
+      "Designed and developed 20+ premium WordPress themes and contributed to multiple product-based web applications. Focused on responsive UI design, performance optimization, and cross-browser compatibility.",
+    tags: ["HTML", "CSS", "JavaScript", "WordPress", "UI/UX Design"],
   },
 ];
 

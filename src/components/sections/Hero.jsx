@@ -66,7 +66,8 @@ export function Hero() {
               View Projects
             </a>
             <a
-              href="/resume.pdf"
+              href="/src/assets/Document/Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf"
+              download="Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf"
               className="inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 text-muted-foreground font-mono text-xs uppercase tracking-widest hover:text-glow transition-colors whitespace-nowrap"
             >
               <Download className="size-3 md:size-3.5" />

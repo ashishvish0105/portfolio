@@ -10,21 +10,21 @@ export function Footer() {
 
         <div className="flex items-center gap-3 md:gap-4">
           <a
-            href="#"
+            href="https://github.com/ashishvish0105/"
             aria-label="GitHub"
             className="size-8 md:size-9 flex items-center justify-center border border-border text-muted-foreground hover:text-glow hover:border-glow transition-all"
           >
             <Github className="size-3.5 md:size-4" />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/ashishvish0105/"
             aria-label="LinkedIn"
             className="size-8 md:size-9 flex items-center justify-center border border-border text-muted-foreground hover:text-glow hover:border-glow transition-all"
           >
             <Linkedin className="size-3.5 md:size-4" />
           </a>
           <a
-            href="mailto:ashish@example.com"
+            href="mailto:ashishvish0105@gmial.com"
             aria-label="Email"
             className="size-8 md:size-9 flex items-center justify-center border border-border text-muted-foreground hover:text-glow hover:border-glow transition-all"
           >

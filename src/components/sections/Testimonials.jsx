@@ -7,25 +7,25 @@ const testimonials = [
   {
     quote:
       "Ashish delivered our Angular dashboard ahead of schedule with code quality that's a pleasure to maintain. Easily one of the most reliable engineers I've worked with.",
-    name: "Priya Sharma",
+    name: "jinal Moradia",
     role: "Engineering Lead, MegaMinds",
   },
   {
     quote:
       "He bridges design and engineering effortlessly — pixel-perfect UI backed by clean .NET APIs. Communication was crisp throughout the entire project.",
-    name: "Rahul Mehta",
-    role: "CTO, Vision Infotech",
+    name: "Piyush vavaliya",
+    role: "Project Manager, Vision Infotech",
   },
   {
     quote:
-      "We hired Ashish for a complex healthcare portal. He scoped, built, and deployed it solo — and the client renewed for two more phases. Highly recommended.",
-    name: "Anjali Kapoor",
-    role: "Project Manager",
+      "We hired Ashish for a complex GHI portal. He scoped, built, and deployed it solo — and the client renewed for two more phases. Highly recommended.",
+    name: "Ghanshyam Dodhani",
+    role: "Project Manager, Vision Infotech",
   },
   {
     quote:
       "Modern stack, modern thinking. Ashish leverages AI tools the right way — speed without sloppiness. A genuinely standout full-stack developer.",
-    name: "Karan Patel",
+    name: "Alex",
     role: "Founder, AquaFish",
   },
 ];
