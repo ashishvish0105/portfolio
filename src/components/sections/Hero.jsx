@@ -69,7 +69,17 @@ export function Hero() {
               href="/Document/Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf"
               download="Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf"
               className="inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 text-muted-foreground font-mono text-xs uppercase tracking-widest hover:text-glow transition-colors whitespace-nowrap"
-            >
+            > 
+              <Download className="size-3 md:size-3.5" />
+              <span className="hidden sm:inline">Resume.pdf</span>
+              <span className="sm:hidden">Resume</span>
+            </a>
+
+            <a
+              href="/assets/Ashish_Vishwakarma.pdf"
+              download="Ashish_Vishwakarma.pdf"
+              className="inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 text-muted-foreground font-mono text-xs uppercase tracking-widest hover:text-glow transition-colors whitespace-nowrap"
+            > 
               <Download className="size-3 md:size-3.5" />
               <span className="hidden sm:inline">Resume.pdf</span>
               <span className="sm:hidden">Resume</span>
