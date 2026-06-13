@@ -101,7 +101,9 @@ export function Contact() {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
+          title: formData.subject, // For email template compatibility
           message: formData.message,
+          portfolioUrl: "https://ashish-portfolio-79qd.onrender.com/",
         }
       );
 
