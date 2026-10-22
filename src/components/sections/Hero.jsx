@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Sparkles } from "lucide-react";
 import portrait from "@/assets/ashish-portrait.png";
+import resume from "@/assets/Document/Ashish_Vishwakarma_Resume_FullStack_DotNet_Angular.pdf";
 import { TypingText } from "@/components/TypingText";
 import resumePdf1 from "@/assets/Document/Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf";
 // import resumePdf2 from "@/assets/Ashish_Vishwakarma.pdf";
@@ -68,8 +69,8 @@ export function Hero() {
               View Projects
             </a>
             <a
-              href={resumePdf1}
-              download="Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf"
+              href={resume}
+              download="Ashish_Vishwakarma_Resume_FullStack_DotNet_Angular.pdf"
               className="inline-flex items-center gap-2 px-4 md:px-7 py-2.5 md:py-3.5 text-muted-foreground font-mono text-xs uppercase tracking-widest hover:text-glow transition-colors whitespace-nowrap"
             > 
               <Download className="size-3 md:size-3.5" />
@@ -97,15 +98,15 @@ export function Hero() {
               </div>
             </div>
             <div>
-              <div className="font-mono text-xl md:text-2xl lg:text-3xl text-foreground tabular-nums">20+</div>
+              <div className="font-mono text-xl md:text-2xl lg:text-3xl text-foreground tabular-nums">50+</div>
               <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
-                Projects Shipped
+                eMyShop APIs
               </div>
             </div>
             <div>
-              <div className="font-mono text-xl md:text-2xl lg:text-3xl text-glow tabular-nums">99.9%</div>
+              <div className="font-mono text-xl md:text-2xl lg:text-3xl text-glow tabular-nums">4+</div>
               <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
-                Reliability
+                Years Full Stack
               </div>
             </div>
           </div>
@@ -165,4 +166,3 @@ export function Hero() {
     </section>
   );
 }
-

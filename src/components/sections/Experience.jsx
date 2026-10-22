@@ -3,36 +3,44 @@ import { SectionHeader } from "./About";
 
 const items = [
   {
-    company: "Freelance - eMyShop",
+    company: "Freelance / Personal Project · eMyShop",
     role: "Full Stack Developer",
-    period: "May / 2025 - Present",
+    period: "May 2026 - Present",
     detail:
-      "Developing a full-featured e-commerce platform with product catalog management, shopping cart, order processing, user authentication, and payment integration. Building responsive Angular interfaces and scalable .NET Core APIs.",
-    tags: ["Angular", ".NET Core", "SQL Server", "REST API"],
+      "Building an e-commerce and inventory management platform from scratch with Angular, ASP.NET Core Web API, SQL Server, and Azure. Developed 50+ APIs and core product, category, customer, order, authentication, authorization, dashboard, and reporting features.",
+    tags: ["Angular", "ASP.NET Core Web API", "SQL Server", "Microsoft Azure"],
     active: true,
   },
   {
     company: "Megaminds Tech Private Limited",
-    role: "Angular & .NET Developer",
-    period: "May / 2025 - April / 2026",
+    role: "Full Stack Developer · Angular & .NET",
+    period: "May 2025 - April 2026",
     detail:
-      "Developed the PilotBird insurance analytics platform for the US, UK, and Canadian markets. Built Angular dashboards, AI-assisted data verification workflows, and scalable .NET backend services for customer analytics and risk profiling.",
-    tags: ["Angular", ".NET Core", "SQL Server", "Azure DevOps", "Git", "Docker"],
+      "Developed and maintained PilotBird, an insurance analytics platform for the US, UK, and Canada. Built Angular screens and ASP.NET Core APIs, including 30+ REST APIs, and implemented customer-data processing, verification, and publishing workflows.",
+    tags: ["Angular", "ASP.NET Core Web API", "SQL Server"],
+  },
+  {
+    company: "Freelance · Actual Trader",
+    role: "Full Stack Developer",
+    period: "September 2024 - April 2025",
+    detail:
+      "Built a wholesale trading and inventory management web application with ASP.NET Core MVC and SQL Server. Implemented product, stock, inventory, and vendor workflows, and optimized API response time from about two minutes to two seconds.",
+    tags: ["ASP.NET Core MVC", "SQL Server", "API Optimization"],
   },
   {
     company: "Vision Infotech",
-    role: "Angular & .NET Developer",
-    period: "April / 2022 - Sept / 2024",
+    role: "Full Stack Developer · Angular, React & .NET",
+    period: "April 2022 - September 2024",
     detail:
-      "Delivered enterprise web applications including Amazon seller tools, event management systems, and service management portals. Developed Angular frontends, .NET APIs, reporting dashboards, and third-party integrations.",
-    tags: ["Angular", ".NET Core", "SQL Server", "Entity Framework", "Azure DevOps", "Git"],
+      "Delivered service management, event, analytics, e-commerce, and vendor-management applications. Work included Google Maps integration, DevExpress dashboards and reports, event registration for 40+ events, and SQL Server bulk imports supporting 10,000+ records.",
+    tags: ["Angular", "React", ".NET", "SQL Server", "DevExpress"],
   },
   {
     company: "Goldenmace IT Solutions",
     role: "Web Designer & Frontend Developer",
-    period: "April / 2021 - March / 2022",
+    period: "April 2021 - March 2022",
     detail:
-      "Designed and developed 20+ premium WordPress themes and contributed to multiple product-based web applications. Focused on responsive UI design, performance optimization, and cross-browser compatibility.",
+      "Designed and developed responsive websites and 20+ premium WordPress themes sold on ThemeForest, with layouts adapted for different screen sizes.",
     tags: ["HTML", "CSS", "JavaScript", "WordPress", "UI/UX Design"],
   },
 ];
@@ -112,4 +120,3 @@ export function Experience() {
     </section>
   );
 }
-
