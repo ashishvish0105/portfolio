@@ -11,15 +11,15 @@ import portfolio from "@/assets/project-portfolio.jpg";
 const projects = [
   {
     name: "PilotBird",
-    desc: "Developed an AI-powered insurance analytics platform for the US, UK, and Canadian markets, collecting and processing publicly available customer data from multiple online sources",
-    tech: ["Angular", ".NET Core", "SQL Server", "Docker"],
+    desc: "Built Angular screens and ASP.NET Core APIs for an insurance analytics platform serving the US, UK, and Canada, including 30+ REST APIs and customer-data verification workflows.",
+    tech: ["Angular", "ASP.NET Core Web API", "SQL Server"],
     image: pilotbird,
     liveUrl: "https://www.pilotbird.com/",
   },
   {
     name: "Amazon Tools",
-    desc: "Developed automated data extraction and reporting tools for Amazon sellers, processing over 5,000 product records daily.",
-    tech: ["Angular", "Web API", "Charts"],
+    desc: "Built data analysis and calculation features with Excel bulk imports into SQL Server supporting more than 10,000 records, multi-record entry, and role-based access.",
+    tech: ["Angular", ".NET", "SQL Server", "Excel Bulk Import"],
     image: amazon,
     liveUrl: "",
   },
@@ -39,8 +39,8 @@ const projects = [
   },
   {
     name: "AquaFish",
-    desc: "Aquarium management app with selling fish and species tracking and water quality alerts.",
-    tech: ["Angular", "TypeScript", "PWA"],
+    desc: "Maintained an e-commerce application for fish and aquarium accessories, improving product listings, responsive layouts, performance, and SEO-friendly behavior.",
+    tech: ["Angular", "TypeScript", "E-commerce"],
     image: aquafish,
     liveUrl: "https://aquafish.vercel.app/",
   },
@@ -49,7 +49,7 @@ const projects = [
     desc: "This website — built with React, Tailwind, and Framer Motion.",
     tech: ["React", "Tailwind", "Framer", "EmailJS"],
     image: portfolio,
-    liveUrl: "https://your-portfolio-url.com",
+    liveUrl: "https://ashish-portfolio-79qd.onrender.com",
   },
 ];
 
@@ -102,24 +102,28 @@ export function Projects() {
                 </div>
 
                 <div className="mt-4 md:mt-6 flex items-center gap-4 pt-4 border-t border-border">
-                    <a
-                      href={p.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-foreground hover:text-glow transition-colors"
-                    >
-                      <ExternalLink className="size-3" />
-                      <span>Live</span>
-                    </a>
-                    <a
-                      href={p.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-glow transition-colors"
-                    >
-                      <Github className="size-3" />
-                      <span>Code</span>
-                    </a>
+                    {p.liveUrl && (
+                      <a
+                        href={p.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-foreground hover:text-glow transition-colors"
+                      >
+                        <ExternalLink className="size-3" />
+                        <span>Live</span>
+                      </a>
+                    )}
+                    {p.githubUrl && (
+                      <a
+                        href={p.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-glow transition-colors"
+                      >
+                        <Github className="size-3" />
+                        <span>Code</span>
+                      </a>
+                    )}
                   {/* <a
                     href="#"
                     className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-foreground hover:text-glow transition-colors"
@@ -145,4 +149,3 @@ export function Projects() {
     </section>
   );
 }
-

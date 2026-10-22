@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Cpu, Zap } from "lucide-react";
+import { Code2, Cpu, GraduationCap, Zap } from "lucide-react";
 
 const cards = [
   {
@@ -16,6 +16,11 @@ const cards = [
     icon: Zap,
     title: "AI-Assisted Workflow",
     body: "Leveraging Cursor, Claude, and Copilot to ship faster without sacrificing quality.",
+  },
+  {
+    icon: GraduationCap,
+    title: "BCA · 7.24 CGPA",
+    body: "Naranlala College of Professional and Applied Science · 2016–2019. Languages: English, Hindi, Gujarati.",
   },
 ];
 
@@ -40,9 +45,10 @@ export function About() {
             </p>
             <div className="mt-6 md:mt-8 space-y-4 md:space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
               <p>
-                Over the last <span className="text-foreground">five years</span>, I've shipped
-                Angular interfaces and .NET APIs across aviation, healthcare, e-commerce, and
-                cloud platforms — translating complex business rules into reliable software.
+                With <span className="text-foreground">5+ years in web development</span>,
+                including 4+ years building full-stack applications, I've delivered Angular
+                interfaces and .NET APIs for insurance, e-commerce, event management, and
+                service platforms.
               </p>
               <p>
                 I'm passionate about <span className="text-foreground">developer velocity</span>{" "}
@@ -107,4 +113,3 @@ export function SectionHeader({
     </motion.div>
   );
 }
-

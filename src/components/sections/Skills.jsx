@@ -5,30 +5,35 @@ const groups = [
   {
     label: "Frontend",
     items: [
-      { name: "Angular", level: 95 },
-      { name: "TypeScript", level: 92 },
-      { name: "JavaScript", level: 90 },
-      { name: "Tailwind CSS", level: 88 },
-      { name: "SCSS / CSS / HTML", level: 95 },
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "React (UI maintenance)",
+      "HTML5",
+      "CSS3 / SCSS",
+      "Bootstrap",
+      "Tailwind CSS",
     ],
   },
   {
     label: "Backend",
-    items: [
-      { name: ".NET Core", level: 90 },
-      { name: "Web API", level: 88 },
-      { name: "SQL Server", level: 85 },
-      { name: "Entity Framework", level: 80 },
-    ],
+    items: ["C#", "ASP.NET Core", "ASP.NET Core Web API", "ASP.NET MVC", "Entity Framework Core", "LINQ", "Dapper", "MediatR"],
   },
   {
-    label: "Tools & AI",
-    items: [
-      { name: "GitHub", level: 92 },
-      { name: "Cursor", level: 88 },
-      { name: "Claude", level: 86 },
-      { name: "ChatGPT / Copilot", level: 90 },
-    ],
+    label: "Database",
+    items: ["SQL Server", "MySQL", "Stored Procedures", "Indexing", "Query Optimization", "Excel Bulk Import"],
+  },
+  {
+    label: "Architecture & Auth",
+    items: ["Clean Architecture", "Repository Pattern", "SOLID", "CQRS", "Dependency Injection", "JWT", "OAuth"],
+  },
+  {
+    label: "Cloud & DevOps",
+    items: ["Microsoft Azure (fundamentals)", "Docker", "CI/CD (fundamentals)", "Git"],
+  },
+  {
+    label: "Tools & Integrations",
+    items: ["GitHub", "Visual Studio", "VS Code", "DevExpress", "Google Maps API", "ChatGPT", "Claude", "GitHub Copilot", "Cursor"],
   },
 ];
 
@@ -38,7 +43,7 @@ export function Skills() {
       <div className="max-w-7xl mx-auto">
         <SectionHeader index="02" title="Stack" subtitle="// technical capabilities" />
 
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-border border border-border">
+        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
           {groups.map((g, gi) => (
             <motion.div
               key={g.label}
@@ -57,25 +62,14 @@ export function Skills() {
                 </h3>
               </div>
 
-              <div className="space-y-4 md:space-y-5">
-                {g.items.map((item, i) => (
-                  <div key={item.name}>
-                    <div className="flex justify-between mb-1.5 md:mb-2">
-                      <span className="text-xs md:text-sm text-foreground">{item.name}</span>
-                      <span className="font-mono text-[9px] md:text-[10px] text-muted-foreground tabular-nums">
-                        {item.level}%
-                      </span>
-                    </div>
-                    <div className="h-px bg-border overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2, delay: 0.2 + i * 0.05, ease: "easeOut" }}
-                        className="h-full bg-glow shadow-[0_0_8px_var(--color-glow)]"
-                      />
-                    </div>
-                  </div>
+              <div className="flex flex-wrap gap-2">
+                {g.items.map((item) => (
+                  <span
+                    key={item}
+                    className="border border-border px-2 py-1 text-[10px] md:text-xs text-muted-foreground"
+                  >
+                    {item}
+                  </span>
                 ))}
               </div>
             </motion.div>
@@ -85,4 +79,3 @@ export function Skills() {
     </section>
   );
 }
-

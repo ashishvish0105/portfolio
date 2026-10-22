@@ -24,7 +24,7 @@ export function Footer() {
             <Linkedin className="size-3.5 md:size-4" />
           </a>
           <a
-            href="mailto:ashishvish0105@gmial.com"
+            href="mailto:ashishvish0105@gmail.com"
             aria-label="Email"
             className="size-8 md:size-9 flex items-center justify-center border border-border text-muted-foreground hover:text-glow hover:border-glow transition-all"
           >
@@ -35,4 +35,3 @@ export function Footer() {
     </footer>
   );
 }
-
