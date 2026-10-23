@@ -4,8 +4,8 @@ import { Menu, X } from "lucide-react";
 const links = [
   { id: "about", label: "About" },
   { id: "skills", label: "Stack" },
-  { id: "experience", label: "Archive" },
-  { id: "projects", label: "Work" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "services", label: "Services" },
   { id: "contact", label: "Contact" },
 ];
@@ -100,4 +100,3 @@ export function Navbar() {
     </nav>
   );
 }
-

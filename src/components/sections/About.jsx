@@ -5,7 +5,7 @@ const cards = [
   {
     icon: Code2,
     title: "5+ Years Experience",
-    body: "Building production-grade applications across enterprise, healthcare, and e-commerce.",
+    body: "Delivering web applications for insurance, e-commerce, events, and service management.",
   },
   {
     icon: Cpu,
@@ -46,14 +46,15 @@ export function About() {
             <div className="mt-6 md:mt-8 space-y-4 md:space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
               <p>
                 With <span className="text-foreground">5+ years in web development</span>,
-                including 4+ years building full-stack applications, I've delivered Angular
-                interfaces and .NET APIs for insurance, e-commerce, event management, and
-                service platforms.
+                including 4+ years in full-stack roles, I build Angular applications and C#/.NET
+                APIs backed by SQL Server. My experience spans insurance analytics, e-commerce,
+                inventory, event management, and service operations.
               </p>
               <p>
-                I'm passionate about <span className="text-foreground">developer velocity</span>{" "}
-                and the new wave of AI tooling. My workflow blends classical engineering rigor
-                with modern AI assistants to ship faster without cutting corners.
+                I work across the full delivery cycle—from requirements and database design to
+                API integration, debugging, performance tuning, and ongoing maintenance. I apply
+                Clean Architecture, SOLID principles, and AI development tools where they add
+                practical value.
               </p>
             </div>
           </motion.div>

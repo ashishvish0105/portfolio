@@ -6,41 +6,64 @@ const items = [
     company: "Freelance / Personal Project · eMyShop",
     role: "Full Stack Developer",
     period: "May 2026 - Present",
-    detail:
-      "Building an e-commerce and inventory management platform from scratch with Angular, ASP.NET Core Web API, SQL Server, and Azure. Developed 50+ APIs and core product, category, customer, order, authentication, authorization, dashboard, and reporting features.",
-    tags: ["Angular", "ASP.NET Core Web API", "SQL Server", "Microsoft Azure"],
+    location: "Navsari, India",
+    highlights: [
+      "Designed and built an e-commerce and inventory management platform from scratch using Angular, ASP.NET Core Web API, SQL Server, and Microsoft Azure.",
+      "Developed 50+ APIs and core product, category, inventory, customer, and order management modules.",
+      "Implemented authentication and authorization, plus dashboard and reporting features.",
+      "Continue to enhance functionality and integrate frontend screens with backend APIs.",
+    ],
+    tags: ["Angular", "ASP.NET Core Web API", "SQL Server", "Microsoft Azure fundamentals"],
     active: true,
   },
   {
     company: "Megaminds Tech Private Limited",
     role: "Full Stack Developer · Angular & .NET",
     period: "May 2025 - April 2026",
-    detail:
-      "Developed and maintained PilotBird, an insurance analytics platform for the US, UK, and Canada. Built Angular screens and ASP.NET Core APIs, including 30+ REST APIs, and implemented customer-data processing, verification, and publishing workflows.",
+    location: "Surat, India",
+    highlights: [
+      "Developed and maintained Angular screens and 30+ ASP.NET Core REST APIs for PilotBird, an insurance analytics platform serving the US, UK, and Canada.",
+      "Focused on the Utility and Workbench modules, including frontend-backend integration.",
+      "Implemented customer-data processing, verification, and publishing workflows, including review screens.",
+      "Investigated application issues and supported production fixes while collaborating with a five-developer team, Team Lead, and Project Manager.",
+    ],
     tags: ["Angular", "ASP.NET Core Web API", "SQL Server"],
   },
   {
-    company: "Freelance · Actual Trader",
+    company: "Freelance · Atual Trader",
     role: "Full Stack Developer",
     period: "September 2024 - April 2025",
-    detail:
-      "Built a wholesale trading and inventory management web application with ASP.NET Core MVC and SQL Server. Implemented product, stock, inventory, and vendor workflows, and optimized API response time from about two minutes to two seconds.",
+    highlights: [
+      "Developed a wholesale trading and inventory management web application using ASP.NET Core MVC and SQL Server.",
+      "Implemented product, stock, inventory, and vendor management workflows.",
+      "Reduced API response time from approximately two minutes to two seconds and improved page loading through optimization and UI redesign.",
+    ],
     tags: ["ASP.NET Core MVC", "SQL Server", "API Optimization"],
   },
   {
     company: "Vision Infotech",
     role: "Full Stack Developer · Angular, React & .NET",
     period: "April 2022 - September 2024",
-    detail:
-      "Delivered service management, event, analytics, e-commerce, and vendor-management applications. Work included Google Maps integration, DevExpress dashboards and reports, event registration for 40+ events, and SQL Server bulk imports supporting 10,000+ records.",
-    tags: ["Angular", "React", ".NET", "SQL Server", "DevExpress"],
+    location: "Navsari, India",
+    highlights: [
+      "GHI Portal: Built service-management screens and APIs, integrated Google Maps for location tracking and service validation, and delivered DevExpress dashboards, reports, and data grids.",
+      "Cloud Labs: Maintained an event-management application supporting 40+ events, with registration and automated email notifications.",
+      "Amazon Tools: Built data analysis features and SQL Server Excel imports for 10,000+ records; improved bulk insertion and applied the Repository Pattern and role-based access.",
+      "AquaFish: Maintained fish and aquarium e-commerce features, improving API and page responsiveness, responsive layouts, and SEO.",
+      "Hana: Enhanced an MVC flower-sales and vendor-management application, delivering vendor, customer, product, order, and sales workflows and improving page performance.",
+    ],
+    tags: ["Angular", "React UI maintenance", "ASP.NET Core MVC", ".NET Web API", "SQL Server", "DevExpress"],
   },
   {
     company: "Goldenmace IT Solutions",
     role: "Web Designer & Frontend Developer",
     period: "April 2021 - March 2022",
-    detail:
-      "Designed and developed responsive websites and 20+ premium WordPress themes sold on ThemeForest, with layouts adapted for different screen sizes.",
+    location: "Navsari, India",
+    highlights: [
+      "Designed and developed responsive websites and WordPress themes using WordPress, HTML5, CSS3, JavaScript, and Tailwind CSS.",
+      "Created 20+ premium WordPress themes sold on ThemeForest.",
+      "Built responsive layouts to improve usability across screen sizes.",
+    ],
     tags: ["HTML", "CSS", "JavaScript", "WordPress", "UI/UX Design"],
   },
 ];
@@ -49,7 +72,7 @@ export function Experience() {
   return (
     <section id="experience" className="relative py-20 md:py-32 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader index="03" title="Archive" subtitle="// experience timeline" />
+        <SectionHeader index="03" title="Experience" subtitle="// career history" />
 
         <div className="mt-12 md:mt-16 relative">
           <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
@@ -96,9 +119,17 @@ export function Experience() {
                   </div>
                   <h3 className="text-base md:text-lg lg:text-xl font-medium text-foreground">{item.company}</h3>
                   <p className="text-xs md:text-sm text-muted-foreground mt-1 font-mono">{item.role}</p>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-3 md:mt-4 leading-relaxed">
-                    {item.detail}
-                  </p>
+                  {item.location && (
+                    <p className="text-[10px] md:text-xs text-muted-foreground mt-2">{item.location}</p>
+                  )}
+                  <ul className="mt-3 md:mt-4 space-y-2 text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    {item.highlights.map((highlight) => (
+                      <li key={highlight} className="flex gap-2">
+                        <span className="text-glow" aria-hidden="true">•</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <div className="mt-3 md:mt-4 flex flex-wrap gap-1.5 md:gap-2">
                     {item.tags.map((t) => (
                       <span

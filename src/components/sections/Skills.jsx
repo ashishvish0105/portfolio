@@ -8,32 +8,42 @@ const groups = [
       "Angular",
       "TypeScript",
       "JavaScript",
+      "RxJS",
       "React (UI maintenance)",
       "HTML5",
       "CSS3 / SCSS",
       "Bootstrap",
       "Tailwind CSS",
+      "jQuery",
     ],
   },
   {
     label: "Backend",
-    items: ["C#", "ASP.NET Core", "ASP.NET Core Web API", "ASP.NET MVC", "Entity Framework Core", "LINQ", "Dapper", "MediatR"],
+    items: ["C#", "ASP.NET Core", ".NET Web API", "ASP.NET MVC", "Entity Framework Core", "LINQ", "Dapper", "MediatR"],
   },
   {
     label: "Database",
     items: ["SQL Server", "MySQL", "Stored Procedures", "Indexing", "Query Optimization", "Excel Bulk Import"],
   },
   {
-    label: "Architecture & Auth",
-    items: ["Clean Architecture", "Repository Pattern", "SOLID", "CQRS", "Dependency Injection", "JWT", "OAuth"],
+    label: "Architecture",
+    items: ["Clean Architecture", "Repository Pattern", "SOLID", "CQRS concepts", "Dependency Injection"],
+  },
+  {
+    label: "Authentication",
+    items: ["JWT", "ASP.NET Core Identity", "Claims-based authorization", "Role-based authorization"],
   },
   {
     label: "Cloud & DevOps",
-    items: ["Microsoft Azure (fundamentals)", "Docker", "CI/CD (fundamentals)", "Git"],
+    items: ["Microsoft Azure (fundamentals)", "Docker (running .NET APIs)", "CI/CD (fundamentals)"],
   },
   {
     label: "Tools & Integrations",
-    items: ["GitHub", "Visual Studio", "VS Code", "DevExpress", "Google Maps API", "ChatGPT", "Claude", "GitHub Copilot", "Cursor"],
+    items: ["Git", "GitHub", "GitLab", "Visual Studio", "VS Code", "DevExpress", "Google Maps API", "ChatGPT", "Claude", "GitHub Copilot", "Cursor"],
+  },
+  {
+    label: "Additional",
+    items: ["WordPress theme development", "Responsive web design"],
   },
 ];
 

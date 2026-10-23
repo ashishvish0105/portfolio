@@ -3,8 +3,6 @@ import { ArrowRight, Download, Sparkles } from "lucide-react";
 import portrait from "@/assets/ashish-portrait.png";
 import resume from "@/assets/Document/Ashish_Vishwakarma_Resume_FullStack_DotNet_Angular.pdf";
 import { TypingText } from "@/components/TypingText";
-import resumePdf1 from "@/assets/Document/Ashish_Vishwakarma_Resume_Angulat_DotNet_Dev.pdf";
-// import resumePdf2 from "@/assets/Ashish_Vishwakarma.pdf";
 
 export function Hero() {
   return (
@@ -25,7 +23,7 @@ export function Hero() {
           <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-border bg-surface/40 backdrop-blur-md mb-6 md:mb-8 text-center md:text-left">
             <span className="size-1.5 rounded-full bg-glow animate-pulse-soft flex-shrink-0" />
             <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-foreground/80 whitespace-nowrap">
-              System Active · Open to Opportunities
+              Available for Immediate Joining · Navsari, India
             </span>
           </div>
 
