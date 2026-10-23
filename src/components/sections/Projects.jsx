@@ -57,7 +57,7 @@ export function Projects() {
   return (
     <section id="projects" className="relative py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-surface/20">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader index="04" title="Work" subtitle="// selected projects" />
+        <SectionHeader index="04" title="Projects" subtitle="// selected work" />
 
         <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {projects.map((p, i) => (

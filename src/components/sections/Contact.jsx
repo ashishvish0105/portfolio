@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, Send, CheckCircle2, AlertCircle, Loader } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle, Loader } from "lucide-react";
 import { SectionHeader } from "./About";
 import emailjs from "@emailjs/browser";
 
 const channels = [
   { icon: Mail, label: "Email", value: "ashishvish0105@gmail.com", href: "mailto:ashishvish0105@gmail.com" },
   { icon: Phone, label: "Phone", value: "+91 88 66 077 896", href: "tel:+91 88 66 077 896" },
+  { icon: MapPin, label: "Location", value: "Navsari, Gujarat, India", href: "https://maps.google.com/?q=Navsari,+Gujarat,+India" },
   { icon: Linkedin, label: "LinkedIn", value: "in/ashishvish0105", href: "https://www.linkedin.com/in/ashishvish0105/" },
   { icon: Github, label: "GitHub", value: "@ashishvish0105", href: "https://github.com/ashishvish0105" },
 ];
@@ -148,8 +149,9 @@ export function Contact() {
               <span className="text-glow">remarkable.</span>
             </h3>
             <p className="mt-4 md:mt-6 text-sm md:text-base text-muted-foreground leading-relaxed">
-              I'm available for full-time roles and freelance projects. Drop a message and I'll
-              get back within 24 hours.
+              Available for immediate joining and open to Full Stack .NET + Angular, .NET
+              Developer, and Angular Developer opportunities. Get in touch about a role or
+              freelance project.
             </p>
 
             <div className="mt-8 md:mt-10 space-y-px bg-border border border-border">
@@ -333,4 +335,3 @@ function Field({
     </div>
   );
 }
-
